@@ -14,8 +14,8 @@ public class Combate : MonoBehaviour {
         Trigger.MyTrigger.CanvasTexto.transform.GetChild(0).GetComponent<Text>().text = GetComponent<Textos>().objMsg;
         Trigger.MyTrigger.CanvasTexto.transform.GetChild(1).GetComponent<Image>().sprite = GetComponent<Textos>().objSprite;
 
-        Trigger.MyTrigger.enemigos.Add( GetComponent<Enemigo>() );
-        Trigger.MyTrigger.CanvasCombate.transform.GetChild(0).GetComponent<Text>().text = "HP " + Trigger.MyTrigger.myVida + " / BOT HP " + GetComponent<Enemigo>().vida;
+        //Trigger.MyTrigger.enemigos.Add( GetComponent<Enemigo>() );
+        Trigger.MyTrigger.CanvasCombate.transform.GetChild(0).GetComponent<Text>().text = "HP " + Trigger.MyTrigger.myVida + " / BOT HP " + GetComponent<Enemigo>().vida;   
         Trigger.MyTrigger.LevelOptions.PlayerCanMove = false;
         
         Trigger.MyTrigger.StartCoroutine( Trigger.MyTrigger.CameraFade(true, 1.5f) );
@@ -95,7 +95,7 @@ public class Combate : MonoBehaviour {
             }
 
             Trigger.MyTrigger.CanvasCombate.SetActive(false);
-            Trigger.MyTrigger.enemigos.Remove(GetComponent<Enemigo>());
+            //Trigger.MyTrigger.enemigos.Remove(GetComponent<Enemigo>());
             
             Trigger.MyTrigger.StartCoroutine(Trigger.MyTrigger.CameraFade(false, 0.25f));
             Destroy(gameObject);

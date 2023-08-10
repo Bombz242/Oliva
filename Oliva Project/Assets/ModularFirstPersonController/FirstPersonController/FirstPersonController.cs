@@ -394,8 +394,12 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
-            {
+            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown) {
+
+                //print ("SPRINT");
+                //transform.position += new Vector3(0, 0, 2);
+
+                
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 
                 // Apply a force that attempts to reach our target velocity
@@ -423,6 +427,8 @@ public class FirstPersonController : MonoBehaviour
                 }
 
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
+
             }
             // All movement calculations while walking
             else

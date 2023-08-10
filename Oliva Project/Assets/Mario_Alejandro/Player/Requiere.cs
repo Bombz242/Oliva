@@ -12,6 +12,29 @@ public class Requiere : MonoBehaviour {
     public List<Item_Logic> requiereItems;
     public GameObject objetoADestruir;
 
+    public string Texto (List<Item_Inventory> myItems ) {
+
+
+        string txtrequerido = GetComponent<Textos>().objMsg + "\n";
+        foreach (Item_Logic itemRequerido in requiereItems) { //other.GetComponent<Item_Container>().contains) {
+            Item_Inventory item = new Item_Inventory();
+            item._objName = itemRequerido.name;
+
+            txtrequerido += itemRequerido.name + "\n";
+
+            /*
+            foreach (Item_Inventory i in myItems) {
+                if (i._objName != item._objName) {
+                    txtrequerido += itemRequerido.name + "\n";
+                    //break;
+                } 
+            }*/
+
+        }
+
+        return txtrequerido;
+    }
+
     public void Lista (List<Item_Inventory> myItems ) {
         string txtrequerido = GetComponent<Textos>().objMsg + "\n";
 
